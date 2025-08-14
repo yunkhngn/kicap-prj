@@ -151,6 +151,7 @@ public class ProductDAO extends DBConnect {
             throw new RuntimeException("ProductDAO.listVariants", e);
         }
     }
+    
     private List<ProductVariant> listVariants(long productId, Connection cn) throws SQLException {
         String sql = "SELECT * FROM ProductVariants WHERE product_id = ? ORDER BY id";
         List<ProductVariant> out = new ArrayList<>();
@@ -184,27 +185,4 @@ public class ProductDAO extends DBConnect {
         }
         return out;
     }
-    public static void main(String[] args) {
-    ProductDAO dao = new ProductDAO();
-
-    // Test lấy 5 sản phẩm mới nhất
-    List<Product> newest = dao.listNewest(5);
-    System.out.println("=== Danh sách sản phẩm mới nhất ===");
-    for (Product p : newest) {
-        System.out.printf("ID: %d | Name: %s | Giá: %s%n",
-                p.getId(),
-                p.getName(),
-                p.getSalePrice() != null ? p.getSalePrice() : p.getBasePrice());
-    }
-
-    // Test tìm theo slug
-    String testSlug = "ten-slug-san-pham"; // thay slug thực tế
-    Product product = dao.findBySlug(testSlug);
-    if (product != null) {
-        System.out.println("\n=== Thông tin sản phẩm ===");
-        System.out.println(product);
-    } else {
-        System.out.println("\nKhông tìm thấy sản phẩm với slug: " + testSlug);
-    }
-}
 }
