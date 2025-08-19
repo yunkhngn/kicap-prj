@@ -26,7 +26,7 @@ import java.util.Objects;
  * @author yunkh
  */
 @WebServlet(name="CartController", urlPatterns={"/cart"})
-public class CardController extends HttpServlet {
+public class CartController extends HttpServlet {
     private final ProductDAO productDAO = new ProductDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
