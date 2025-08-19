@@ -16,6 +16,6 @@ public class OrderSuccessController extends HttpServlet {
         String code = req.getParameter("code");
         Order o = (code==null) ? null : orderDAO.findByCode(code);
         req.setAttribute("order", o);
-        req.getRequestDispatcher("/WEB-INF/views/order-success.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/view/order-success.jsp").forward(req, resp);
     }
 }
