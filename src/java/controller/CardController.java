@@ -84,7 +84,7 @@ public class CardController extends HttpServlet {
                 (Objects.equals(ci.getVariantId(), vid)));
             resp.sendRedirect(req.getContextPath()+"/cart"); return;
         }
-        req.getRequestDispatcher("/WEB-INF/views/cart.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/view/cart.jsp").forward(req, resp);
     }
 
     /**
