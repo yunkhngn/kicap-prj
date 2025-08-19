@@ -12,6 +12,17 @@ import java.util.List;
 public class ProductDAO extends DBConnect {
 
     /* ===== Helpers ===== */
+    public Product findBySlugOrId(String slug, Long id) {
+    if (slug != null) return findBySlug(slug);
+    String sql = "SELECT * FROM Products WHERE id=?";
+    try (Connection cn = getConnection();
+         PreparedStatement ps = cn.prepareStatement(sql)) {
+        ps.setLong(1, id);
+        try (ResultSet rs = ps.executeQuery()) {
+            return rs.next() ? mapProduct(rs) : null;
+        }
+    } catch (SQLException e) { throw new RuntimeException("ProductDAO.findBySlugOrId", e); }
+    }
 
     private static LocalDateTime getLdt(ResultSet rs, String col) throws SQLException {
         // MSSQL + JDBC cho phép lấy LDT trực tiếp với JDK 17

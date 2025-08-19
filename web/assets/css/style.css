@@ -1,0 +1,20 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Aug 19, 2025, 9:08:27 AM
+    Author     : yunkh
+*/
+
+:root{--bd:#e6e8ef;--card:#f7f8fa;--pri:#1e88e5}
+*{box-sizing:border-box} body{margin:0;font:16px/1.5 system-ui}
+.container{max-width:1100px;margin:auto;padding:0 16px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--bd)}
+.nav a{margin:0 8px;text-decoration:none;color:#111}
+h2{margin:16px 0}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border:1px solid var(--bd);padding:8px}
+.btn{display:inline-block;background:var(--pri);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none}
+.total{margin:12px 0;font-weight:700}
+.error{color:#c62828}

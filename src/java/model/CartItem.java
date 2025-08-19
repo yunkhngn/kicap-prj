@@ -22,14 +22,15 @@ public class CartItem {
     public CartItem() {
     }
 
-    public CartItem(Long productId, Long variantId, String name, String variantName, int qty, BigDecimal price, String thumbnailUrl) {
+    public CartItem(Long productId, Long variantId, String name, String variantName,
+                String thumbnailUrl, int qty, java.math.BigDecimal price) {
         this.productId = productId;
         this.variantId = variantId;
         this.name = name;
         this.variantName = variantName;
+        this.thumbnailUrl = thumbnailUrl;
         this.qty = qty;
         this.price = price;
-        this.thumbnailUrl = thumbnailUrl;
     }
 
     public Long getProductId() {
